@@ -13,6 +13,7 @@
 					/obj/effect/proc_holder/spell/invoked/raise_undead_guard/miracle	= CLERIC_T2,
 					/obj/effect/proc_holder/spell/invoked/tame_undead/miracle			= CLERIC_T3,
 					/obj/effect/proc_holder/spell/invoked/rituos/miracle 				= CLERIC_T3,
+					/obj/effect/proc_holder/spell/invoked/resurrect/zizo				= CLERIC_T4
 	)
 	confess_lines = list(
 		"PRAISE ZIZO!",
@@ -33,10 +34,8 @@
 /datum/patron/inhumen/zizo/can_pray(mob/living/follower)
 	. = ..()
 	// Allows prayer in the Zzzzzzzurch(!)
-		//Cove edit start
 	if(istype(get_area(follower), /area/rogue/under/cave/inhumen))
 		return TRUE
-	//Cove edit end
 	// Allows prayer near EEEVIL psycross
 	for(var/obj/structure/fluff/psycross/zizocross/cross in view(4, get_turf(follower)))
 		if(cross.divine == TRUE)
